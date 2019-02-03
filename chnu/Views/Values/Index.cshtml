@@ -1,0 +1,109 @@
+﻿
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="~/css/libs.min.css">
+    <link type="text/css" rel="stylesheet" href="~/css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <title>
+        ЧНУ деканат ФКН
+    </title>
+</head>
+<body class="main">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-8">
+                <form class="filter-form flex" action="values/get">
+                    <div class="select-wrap flex">
+                        <select id="discipline" name="discipline">
+                            <option value="" selected="selected">Предмет</option>
+                        </select>
+                        <select id="student" name="student">
+                            <option value="" selected="selected">Ф.И.О. Студента</option>
+                        </select>
+                        <input class="group fakeSelect" type="text" name="group" placeholder="Группа" />
+                        <div class="fakeSelect discipline" data-select-to="discipline">
+                            <div class="selected flex">
+                                <p>Предмет</p>
+                                <button type="button"><i class="fas fa-chevron-down"></i></button>
+                            </div>
+                            <div class="selectOption">
+                                <div class="option">
+                                    <p data-select="discipline 1">Предмет 1</p>
+                                </div>
+                                <div class="option">
+                                    <p data-select="discipline 2">Предмет 2</p>
+                                </div>
+                                <div class="option">
+                                    <p data-select="discipline 3">Предмет 3</p>
+                                </div>
+                                <div class="option">
+                                    <p data-select="discipline 4">Предмет 4</p>
+                                </div>
+                                <div class="option">
+                                    <p data-select="discipline 5">Предмет 5</p>
+                                </div>
+                                <div class="option">
+                                    <p data-select="discipline 6">Предмет 6</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fakeSelect student" data-select-to="student">
+                            <div class="selected flex">
+                                <p>Ф.И.О. Студента</p>
+                                <button type="button"><i class="fas fa-chevron-down"></i></button>
+                            </div>
+                            <div class="selectOption">
+                                <div class="option">
+                                    <p data-select="student 1">Студент 1</p>
+                                </div>
+                                <div class="option">
+                                    <p data-select="student 2">Студент 2</p>
+                                </div>
+                                <div class="option">
+                                    <p data-select="student 3">Студент 3</p>
+                                </div>
+                                <div class="option">
+                                    <p data-select="student 4">Студент 5</p>
+                                </div>
+                                <div class="option">
+                                    <p data-select="student 5">Студент 5</p>
+                                </div>
+                                <div class="option">
+                                    <p data-select="student 6">Студент 6</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="confirm">
+                        <button class="btn btn-success confirm-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="time flex">
+                        <div class="text">
+                            <p>Пересдачи на:</p>
+                        </div>
+                        <div class="input-group">
+                            <input type="radio" name="time" value="today" id="today">
+                            <label for="today">Сегодня</label>
+                        </div>
+                        <div class="input-group">
+                            <input type="radio" name="time" value="tomorrow" id="tomorrow">
+                            <label for="tomorrow">Завтра</label>
+                        </div>
+                        <div class="input-group">
+                            <input type="radio" name="time" value="onTheWeek" id="onTheWeek">
+                            <label for="onTheWeek">Неделе</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="~/js/libs.min.js"></script>
+    <script src="~/js/common.js"></script>
+</body>
+</html>

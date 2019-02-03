@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="css/libs.min.css">
+    <link type="text/css" rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <title>to university
+    </title>
+  </head>
+  <body class="byName">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="breadcrumbs">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Студент</li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="retake-list">
+            <div class="retake-item flex byGroup">
+              <div class="date">
+                <p>1</p><span> Декабря</span>
+              </div>
+              <div class="discipline-info">
+                <div class="discipline-teacher">
+                  <p>Преподаватель 1</p>
+                </div>
+                <div class="discipline">
+                  <p>Предмет 1</p>
+                </div>
+              </div>
+              <div class="order">
+                <button class="btn btn-success order-btn" data-modal="order-modal"></button>
+              </div>
+            </div>
+            <div class="retake-item flex byGroup">
+              <div class="date">
+                <p>1</p><span> Декабря</span>
+              </div>
+              <div class="discipline-info">
+                <div class="discipline-teacher">
+                  <p>Преподаватель 2</p>
+                </div>
+                <div class="discipline">
+                  <p>Предмет 2</p>
+                </div>
+              </div>
+              <div class="order">
+                <button class="btn btn-success order-btn" data-modal="order-modal"></button>
+              </div>
+            </div>
+            <div class="retake-item flex byGroup">
+              <div class="date">
+                <p>1</p><span> Декабря</span>
+              </div>
+              <div class="discipline-info">
+                <div class="discipline-teacher">
+                  <p>Преподаватель 3</p>
+                </div>
+                <div class="discipline">
+                  <p>Предмет 3</p>
+                </div>
+              </div>
+              <div class="order">
+                <button class="btn btn-success order-btn" data-modal="order-modal"></button>
+              </div>
+            </div>
+            <div class="retake-item flex byGroup">
+              <div class="date">
+                <p>1</p><span> Декабря</span>
+              </div>
+              <div class="discipline-info">
+                <div class="discipline-teacher">
+                  <p>Преподаватель 4</p>
+                </div>
+                <div class="discipline">
+                  <p>Предмет 4</p>
+                </div>
+              </div>
+              <div class="order">
+                <button class="btn btn-success order-btn" data-modal="order-modal"></button>
+              </div>
+            </div>
+            <div class="retake-item flex byGroup">
+              <div class="date">
+                <p>1</p><span> Декабря</span>
+              </div>
+              <div class="discipline-info">
+                <div class="discipline-teacher">
+                  <p>Преподаватель 5</p>
+                </div>
+                <div class="discipline">
+                  <p>Предмет 5</p>
+                </div>
+              </div>
+              <div class="order">
+                <button class="btn btn-success order-btn" data-modal="order-modal"></button>
+              </div>
+            </div>
+            <div class="retake-item flex byGroup">
+              <div class="date">
+                <p>1</p><span> Декабря</span>
+              </div>
+              <div class="discipline-info">
+                <div class="discipline-teacher">
+                  <p>Преподаватель 6</p>
+                </div>
+                <div class="discipline">
+                  <p>Предмет 6</p>
+                </div>
+              </div>
+              <div class="order">
+                <button class="btn btn-success order-btn" data-modal="order-modal"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-container order-modal">
+      <div class="overlay"></div>
+      <div class="modal-content">
+        <div class="close">
+          <button class="close-btn"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="modal-head">
+          <p>Заказать бегунок</p>
+        </div>
+        <div class="modal-form">
+          <form action="#">
+            <div class="input-group">
+              <input type="text" id="date" name="date" placeholder="Укажите дату"/>
+              <label for="date"><i class="far fa-calendar-alt"></i></label>
+            </div>
+            <button class="confirm btn btn-success">Отправить</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="js/libs.min.js"></script>
+    <script src="js/common.js"></script>
+  </body>
+</html>

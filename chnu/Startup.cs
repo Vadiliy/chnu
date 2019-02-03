@@ -8,6 +8,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Microsoft.EntityFrameworkCore;
+using chnu.Models;
 
 namespace chnu
 {
@@ -23,6 +25,11 @@ namespace chnu
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            string connection = Configuration.GetConnectionString("DefaultConnection");
+            // добавляем контекст MobileContext в качестве сервиса в приложение
+            services.AddDbContext<UniversityContext>(options =>
+                options.UseSqlServer(connection));
+
             services.AddMvc();
         }
 
@@ -33,8 +40,11 @@ namespace chnu
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            app.UseMvc();
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute("default", "{controller=Values}/{action=Index}");
+            });
+            app.UseStaticFiles();
         }
     }
 }
