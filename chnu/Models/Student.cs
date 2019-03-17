@@ -11,5 +11,7 @@ namespace chnu.Models
         public bool Debt { get; set; }
 
         public virtual List<Subject> Subjects { get; set; }
+
+        public virtual Group Group { get; set; }
     }
 }

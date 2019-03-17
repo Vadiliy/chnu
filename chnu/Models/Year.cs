@@ -16,6 +16,6 @@ namespace chnu.Models
 
         public int PartOfYear { get; set; }
 
-        public List<Group> Groups { get; set; }
+        public virtual List<Group> Groups { get; set; }
     }
 }

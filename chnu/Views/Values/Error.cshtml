@@ -1,0 +1,34 @@
+﻿@model string
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="~/css/libs.min.css">
+    <link type="text/css" rel="stylesheet" href="~/css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <title>
+        to university
+    </title>
+</head>
+<body class="byDiscipline">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumbs">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="values/index">Головна</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">@Model</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/js/libs.min.js"></script>
+    <script src="~/js/common.js"></script>
+</body>
+</html>

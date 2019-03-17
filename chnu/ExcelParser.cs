@@ -1,5 +1,4 @@
 ﻿using chnu.Models;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using NPOI.HSSF.UserModel;
@@ -45,15 +44,17 @@ namespace chnu
                 Regex regexYear = new Regex("\\d{4}\\/\\d{4}");
                 year.Name = regexYear.Match(yearStr).Value;
 
+                FilterSubjects();
                 book.Close();
             }
             Context.SaveChanges();
         }
 
-        public void GetStudents(Year year, HSSFWorkbook book)
+        void GetStudents(Year year, HSSFWorkbook book)
         {
             foreach (Models.Group group in year.Groups)
             {
+                group.Year = year;
                 if(group.Students == null)
                     group.Students = new List<Student>();
 
@@ -76,12 +77,13 @@ namespace chnu
                         number++;
                         continue;
                     }
-                    string[] words = nameofStudent.Split(' ', StringSplitOptions.RemoveEmptyEntries);
-                    if (words.Length > 4) break;
+                    if (nameofStudent.Contains("Дата складання"))
+                        break;
 
                     Student student = new Student()
                     {
-                        Name = nameofStudent
+                        Name = nameofStudent,
+                        Group = group
                     };
                     group.Students.Add(student);
                     number++;
@@ -90,7 +92,7 @@ namespace chnu
             GetSubjectInfo(year, book);
         }
 
-        public void GetSubjectInfo(Year year, HSSFWorkbook book)
+        void GetSubjectInfo(Year year, HSSFWorkbook book)
         {
             foreach (Models.Group group in year.Groups)
             {
@@ -121,7 +123,8 @@ namespace chnu
                             Lecture = sheet.GetRow(8).GetCell(5 + number).StringCellValue,
                             ExamType = sheet.GetRow(6).GetCell(5 + number).StringCellValue,
                             Hours = sheet.GetRow(5).GetCell(5 + number).NumericCellValue,
-                            Credits = sheet.GetRow(4).GetCell(5 + number).NumericCellValue
+                            Credits = sheet.GetRow(4).GetCell(5 + number).NumericCellValue,
+                            Student = student
                         };
                         student.Subjects.Add(subject);
                         number++;
@@ -131,7 +134,7 @@ namespace chnu
             GetScores(year, book);
         }
 
-        public void GetScores(Year year, HSSFWorkbook book)
+        void GetScores(Year year, HSSFWorkbook book)
         {
             foreach (Models.Group group in year.Groups)
             {
@@ -156,6 +159,20 @@ namespace chnu
                         subjectPos++;
                     }
                     studentPos++;
+                }
+            }
+        }
+
+        void FilterSubjects()
+        {
+            foreach(Year year in Context.Years.Local)
+            {
+                foreach(Models.Group gr in year.Groups)
+                {
+                    foreach(Student st in gr.Students)
+                    {
+                        st.Subjects.RemoveAll(x => x.Score >= 60);
+                    }
                 }
             }
         }

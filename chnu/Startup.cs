@@ -40,11 +40,12 @@ namespace chnu
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseStaticFiles();
             app.UseMvc(routes =>
             {
                 routes.MapRoute("default", "{controller=Values}/{action=Index}");
             });
-            app.UseStaticFiles();
+         
         }
     }
 }

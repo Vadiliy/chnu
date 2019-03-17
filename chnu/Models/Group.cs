@@ -9,5 +9,7 @@ namespace chnu.Models
         public string NameGroup { get; set; }
 
         public virtual List<Student> Students { get; set; }
+
+        public virtual Year Year { get; set; }
     }
 }

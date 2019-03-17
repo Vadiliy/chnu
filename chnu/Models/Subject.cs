@@ -17,5 +17,7 @@
         public int Score { get; set; }
 
         public string DateDebt { get; set; }
+
+        public virtual Student Student { get; set; }
     }
 }
