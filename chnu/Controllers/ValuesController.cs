@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using chnu.Models;
 using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
+
 namespace chnu.Controllers
 {
     public class ValuesController : Controller
@@ -115,6 +115,14 @@ namespace chnu.Controllers
             }
 
             return null;
+        }
+
+        [HttpPost]
+        public IActionResult Order(string date, int studentId, int disciplineId)
+        {
+            Subject subject = context.Subjects.First(x => x.Id == disciplineId);
+            subject.IsOreded = true;
+            context.SaveChanges();
         }
     }
 }

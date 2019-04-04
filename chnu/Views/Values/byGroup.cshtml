@@ -39,6 +39,7 @@
                                     <p>-</p><span></span>
                                 </div>
                                 <div class="student">
+                                    <div class="student-id" style="visibility: hidden; height: 0px; width: 0px;">@student.Id</div>
                                     <div class="name">
                                         <p>@student.Name</p>
                                     </div>
@@ -47,6 +48,7 @@
                                     </div>
                                 </div>
                                 <div class="discipline-info">
+                                    <div class="discipline-id" style="visibility: hidden; height: 0px; width: 0px;">@subj.Id</div>
                                     <div class="discipline-teacher">
                                         <p>@subj.Lecture</p>
                                     </div>
@@ -75,7 +77,7 @@
                 <p>Замовити бігунок</p>
             </div>
             <div class="modal-form">
-                <form action="#">
+                <form action="values/order" method="post">
                     <div class="input-group">
                         <input type="text" id="date" name="date" placeholder="Вкажіть дату" />
                         <label for="date"><i class="far fa-calendar-alt"></i></label>
