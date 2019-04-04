@@ -1,4 +1,6 @@
-﻿namespace chnu.Models
+﻿using System;
+
+namespace chnu.Models
 {
     public class Subject
     {
@@ -19,5 +21,11 @@
         public string DateDebt { get; set; }
 
         public virtual Student Student { get; set; }
+
+        public bool IsOreded { get; set; }
+
+        public bool IsPrinted { get; set; }
+
+        public DateTime DebtIsClosed { get; set; }
     }
 }

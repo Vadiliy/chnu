@@ -17,5 +17,7 @@ namespace chnu.Models
         {
             Database.EnsureCreated();
         }
+
+        public DbSet<User> Admins { get; set; }
     }
 }
