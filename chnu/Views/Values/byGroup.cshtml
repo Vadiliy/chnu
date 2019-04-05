@@ -57,7 +57,14 @@
                                     </div>
                                 </div>
                                 <div class="order">
-                                    <button class="btn btn-success order-btn" data-modal="order-modal"></button>
+                                    @if (subj.IsOreded)
+                                    {
+                                        <button class="btn btn-success order-btn ordered" data-modal="order-modal"></button>
+                                    }
+                                    else
+                                    {
+                                        <button class="btn btn-success order-btn" data-modal="order-modal"></button>
+                                    }
                                 </div>
                             </div>
                         }

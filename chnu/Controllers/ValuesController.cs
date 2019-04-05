@@ -25,7 +25,6 @@ namespace chnu.Controllers
         }
 
         [HttpGet("{id}")]
-        // GET api/values/5
         public IActionResult Get(string discipline, string student, string group, string time)
         {
             if (student != null)
@@ -122,6 +121,7 @@ namespace chnu.Controllers
         {
             Subject subject = context.Subjects.First(x => x.Id == disciplineId);
             subject.IsOreded = true;
+            subject.DateDebt = date;
             context.SaveChanges();
         }
     }

@@ -10,6 +10,7 @@ function sameWidth(selector) {
         $(this).width(max_width);
     });
 };
+
 $(document).ready(function () {
     // datepicker
     $( '#date').datepicker({
@@ -38,9 +39,29 @@ $(document).ready(function () {
 
     // OPEN MODALS
     $('*[data-modal]').on('click', function () {
+        
+        var stId = $(this).parent().parent().find(".student").find(".student-id").text();
+        $('<input>').attr({
+            type: 'hidden',
+            id: 'studentId',
+            name: 'studentId',
+            value: stId
+        }).appendTo('div .input-group');
+
+        var discId = $(this).parent().parent().find(".discipline-info").find(".discipline-id").text();
+        $('<input>').attr({
+            type: 'hidden',
+            id: 'disciplineId',
+            name: 'disciplineId',
+            value: discId
+        }).appendTo('div .input-group');
+
+
         $('body').addClass('modal-open');
         var modal = $(this).data('modal');
         $('.' + modal).fadeIn().addClass('flex');
+
+        
     });
 
     // CLOSE MODALS
