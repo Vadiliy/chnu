@@ -123,6 +123,8 @@ namespace chnu.Controllers
             subject.IsOreded = true;
             subject.DateDebt = date;
             context.SaveChanges();
+
+            return null;
         }
     }
 }
