@@ -17,7 +17,7 @@ namespace chnu.Controllers
             //excel.Context = context;
             //excel.GetGroups();
         }
-        // GET api/values
+        // GET api/valuesя
         [HttpGet]
         public IActionResult Index()
         {
