@@ -70,7 +70,32 @@ $(document).ready(function () {
         $('.modal-container').fadeOut(function () {
             $('.modal-container').removeClass('flex');
         });
-        console.log('click');
+    });
+
+    $('#submit-btn').on('click', function () {
+        date = $('#date').val();
+        stId = $('#studentId').val();
+        discId = $('#disciplineId').val();
+        var data = {
+            'date': date,
+            'studentId': stId,
+            'disciplineId': discId
+        }
+        $.ajax({
+            url: "values/order", type:'POST', data:data,  success: function (result) {
+                
+                $('#btn-' + discId).addClass('ordered')
+                debugger
+                $('body').removeClass('modal-open');
+                $('.modal-container').fadeOut(function () {
+                    $('.modal-container').removeClass('flex');
+                });
+
+                $('#studentId').remove();
+                $('#disciplineId').remove();
+            }
+        });
+     
     });
 
     //  FAKE SELECT

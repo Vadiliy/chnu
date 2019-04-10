@@ -63,7 +63,7 @@
                                     }
                                     else
                                     {
-                                        <button class="btn btn-success order-btn" data-modal="order-modal"></button>
+                                        <button id="btn-@subj.Id" class="btn btn-success order-btn" data-modal="order-modal"></button>
                                     }
                                 </div>
                             </div>
@@ -84,12 +84,12 @@
                 <p>Замовити бігунок</p>
             </div>
             <div class="modal-form">
-                <form action="values/order" method="post">
+                <form action="#" method="post" onsubmit="return false;">
                     <div class="input-group">
                         <input type="text" id="date" name="date" placeholder="Вкажіть дату" />
                         <label for="date"><i class="far fa-calendar-alt"></i></label>
                     </div>
-                    <button class="confirm btn btn-success">Надіслати</button>
+                    <button id="submit-btn" class="confirm btn btn-success">Надіслати</button>
                 </form>
             </div>
         </div>

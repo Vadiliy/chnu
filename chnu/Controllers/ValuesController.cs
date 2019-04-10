@@ -117,14 +117,14 @@ namespace chnu.Controllers
         }
 
         [HttpPost]
-        public IActionResult Order(string date, int studentId, int disciplineId)
+        public string[] Order(string date, int studentId, int disciplineId)
         {
             Subject subject = context.Subjects.First(x => x.Id == disciplineId);
             subject.IsOreded = true;
             subject.DateDebt = date;
             context.SaveChanges();
 
-            return null;
+            return new string[] { date + "  " +  studentId + "  " + disciplineId};
         }
     }
 }
