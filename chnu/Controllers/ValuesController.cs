@@ -13,9 +13,12 @@ namespace chnu.Controllers
         {
             this.context = context;
 
-            //ExcelParser excel = new ExcelParser();
-            //excel.Context = context;
-            //excel.GetGroups();
+            if (context.Students.Count() == 0)
+            {
+                ExcelParser excel = new ExcelParser();
+                excel.Context = context;
+                excel.GetGroups();
+            }
         }
         // GET api/valuesя
         [HttpGet]
@@ -25,7 +28,7 @@ namespace chnu.Controllers
         }
 
         [HttpGet("{id}")]
-        public IActionResult Get(string discipline, string student, string group, string time)
+        public IActionResult Get(string discipline, string student, string group)
         {
             if (student != null)
             {

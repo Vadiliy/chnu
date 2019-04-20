@@ -23,7 +23,7 @@ namespace chnu.Controllers
             }
             catch
             {
-                return null;
+                return View("~/Views/Values/Error.cshtml", "Невірний логін та пароль");
             }
         }
     }

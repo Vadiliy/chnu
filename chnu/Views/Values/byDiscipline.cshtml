@@ -11,7 +11,7 @@
     <link type="text/css" rel="stylesheet" href="~/css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
     <title>
-        to university
+        Деканат ФКН
     </title>
 </head>
 <body class="byDiscipline">
@@ -40,6 +40,7 @@
                             <p>@s.Student.Name</p> 
                         </div>
                         <div class="discipline-info">
+                            <div class="discipline-id" style="visibility: hidden; height: 0px; width: 0px;">@s.Id</div>
                             <div class="discipline-teacher">
                                 <p>@s.Lecture</p>
                             </div>
@@ -48,7 +49,14 @@
                             </div>
                         </div>
                         <div class="order">
-                            <button class="btn btn-success order-btn" data-modal="order-modal"></button>
+                            @if (s.IsOreded)
+                            {
+                                <button class="btn btn-success order-btn ordered" data-modal="order-modal"></button>
+                            }
+                            else
+                            {
+                                <button id="btn-@s.Id" class="btn btn-success order-btn" data-modal="order-modal"></button>
+                            }
                         </div>
                     </div>
                     }
@@ -66,12 +74,12 @@
                 <p>Замовити бігунок</p>
             </div>
             <div class="modal-form">
-                <form action="#">
+                <form action="#" method="post" onsubmit="return false;">
                     <div class="input-group">
                         <input type="text" id="date" name="date" placeholder="Вкажіть дату" />
                         <label for="date"><i class="far fa-calendar-alt"></i></label>
                     </div>
-                    <button class="confirm btn btn-success">Надіслати</button>
+                    <button id="submit-btn" class="confirm btn btn-success">Надіслати</button>
                 </form>
             </div>
         </div>

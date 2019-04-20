@@ -37,6 +37,7 @@
                             <p>-</p><span> Дата</span>
                         </div>
                         <div class="discipline-info">
+                            <div class="discipline-id" style="visibility: hidden; height: 0px; width: 0px;">@subs.Id</div>
                             <div class="discipline-teacher">
                                 <p>@subs.Lecture</p>
                             </div>
@@ -45,7 +46,14 @@
                             </div>
                         </div>
                         <div class="order">
-                            <button class="btn btn-success order-btn" data-modal="order-modal"></button>
+                            @if (subs.IsOreded)
+                            {
+                                <button class="btn btn-success order-btn ordered" data-modal="order-modal"></button>
+                            }
+                            else
+                            {
+                                <button id="btn-@subs.Id" class="btn btn-success order-btn" data-modal="order-modal"></button>
+                            }
                         </div>
                     </div>
                     }
@@ -63,12 +71,12 @@
                 <p>Замовити бігунок</p>
             </div>
             <div class="modal-form">
-                <form action="#">
+                <form action="#" method="post" onsubmit="return false;">
                     <div class="input-group">
                         <input type="text" id="date" name="date" placeholder="Вкажіть дату" />
                         <label for="date"><i class="far fa-calendar-alt"></i></label>
                     </div>
-                    <button class="confirm btn btn-success">Надіслати</button>
+                    <button id="submit-btn" class="confirm btn btn-success">Надіслати</button>
                 </form>
             </div>
         </div>
